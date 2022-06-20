@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  {%- include head.html -%}
+
+  <body class="teaser d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-4 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <a href="#" class="float-md-start mb-0">
+            <img src="{{ "assets/img/voidheadstudios.png" | relative_url }}" style="max-height: 100px;;">
+          </a>
+          <nav class="nav nav-masthead justify-content-center float-md-end fs-5">
+            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
+            <a class="nav-link fw-bold py-1 px-0" href="mailto:team@voidheadstudios.com">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="px-3">
+        {% if page.title %}
+          <h1>{{ page.title }}</h1>
+        {% endif %}
+        {% if page.tagline %}
+          <p class="lead">
+            {{ page.tagline }}
+          </p>
+        {% endif %}
+        <p class="lead">
+          <a href="{{ page.discord }}" class="btn btn-lg btn-secondary fw-bold border-white bg-white me-1">
+            <i class="bi bi-discord"></i>
+            Discord
+          </a>
+          <a href="{{ page.newsletter }}" class="btn btn-lg btn-secondary border-white bg-white">
+            <i class="bi bi-envelope-heart-fill"></i>
+            Email waitlist
+          </a>
+        </p>
+      </main>
+
+      {% if page.footer %}
+        <footer class="mt-auto text-white-50">
+          <p class="mb-0">{{ page.footer }}</p>
+        </footer>
+      {% endif %}
+    </div>
+
+    <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+  </body>
+
+</html>
